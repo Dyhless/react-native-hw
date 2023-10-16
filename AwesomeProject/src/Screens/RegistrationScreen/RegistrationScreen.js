@@ -31,7 +31,7 @@ export const RegistrationScreen = () => {
 
   return (
     <ImageBackground
-      source={require("../../images/bg-photo.png")}
+      source={require("../../Images/bg-photo.png")}
       style={styles.imageBackground}
       imageStyle={{
         minHeight: 812,
@@ -40,12 +40,12 @@ export const RegistrationScreen = () => {
       <KeyboardAvoidingView style={styles.container} behavior="padding">
         <View style={styles.avatar}>
           <Image
-            source={require("../../images/avatar.jpg")}
+            source={require("../../Images/avatar.jpg")}
             style={styles.avatarImage}
           />
           <TouchableOpacity style={styles.addButton} onPress={addAvatar}>
             <Image
-              source={require("../../images/added.png")}
+              source={require("../../Images/added.png")}
               style={styles.addButtonIcon}
             />
           </TouchableOpacity>

@@ -25,7 +25,7 @@ export const LoginScreen = () => {
 
   return (
     <ImageBackground
-      source={require("../../images/bg-photo.png")}
+      source={require("../../Images/bg-photo.png")}
       style={styles.imageBackground}
       imageStyle={{
         minHeight: 812,
