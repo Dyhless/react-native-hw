@@ -1,0 +1,113 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  imageBackground: {
+    flex: 1,
+    position: "relative",
+  },
+  container: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    minHeight: 549,
+    paddingLeft: 16,
+    paddingRight: 16,
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    padding: 32,
+  },
+  avatar: {
+    position: "relative",
+    backgroundColor: "#F6F6F6",
+    borderRadius: 16,
+    marginBottom: 32,
+    width: 120,
+    aspectRatio: 1,
+    marginTop: "-25%",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  avatarImage: {
+    borderRadius: 16,
+    width: 120,
+    height: 120,
+  },
+  addButton: {
+    position: "absolute",
+    width: 44,
+    height: 44,
+    right: -24,
+    bottom: 7,
+  },
+  addButtonIcon: {
+    width: 44,
+    height: 44,
+  },
+  registrationTitle: {
+    fontFamily: "Roboto-Medium",
+    fontSize: 30,
+    lineHeight: 35,
+    textAlign: "center",
+    marginBottom: 32,
+  },
+  formWrapper: {
+    position: "relative",
+  },
+  input: {
+    color: "#BDBDBD",
+    backgroundColor: "#F6F6F6",
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "#E8E8E8",
+    borderRadius: 8,
+    padding: 16,
+    fontFamily: "Roboto-Regular",
+    fontSize: 16,
+    marginBottom: 16,
+  },
+  inputFocused: {
+    borderColor: "#FF6C00",
+    backgroundColor: "#fff",
+    color: "#000",
+  },
+  showPasswordButton: {
+    fontSize: 16,
+  },
+  lastInputWrapper: {
+    position: "relative",
+  },
+  showPasswordText: {
+    position: "absolute",
+    top: -51,
+    right: 16,
+    color: "#1B4371",
+  },
+  BtnWrap: {
+    position: "absolute",
+    width: "100%",
+    bottom: 45 + 34,
+    // top: 604 + 44,
+    paddingLeft: 16,
+    paddingRight: 16,
+    marginTop: 43,
+  },
+  registrationButton: {
+    backgroundColor: "#FF6C00",
+    borderRadius: 100,
+    width: "100%",
+    padding: 16,
+    marginTop: 27,
+    marginBottom: 16,
+  },
+  registrationButtonText: {
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 16,
+  },
+  registrationLinkText: {
+    textAlign: "center",
+    fontSize: 16,
+    color: "#1B4371",
+  },
+});
