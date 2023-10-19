@@ -1,8 +1,17 @@
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { LoginScreen } from "./src/Screens/LoginScreen/LoginScreen";
-import { PostsScreen } from "./src/Screens/PostsScreen/PostsScreen";
+
 import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import { SvgBack } from "./src/Images/Svg";
+import { Home } from "./src/Screens/Home/Home";
+import { CommentsScreen } from "./src/Screens/CommentsScreen/CommentsScreen";
+
+const MainStack = createStackNavigator(); 
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,17 +25,54 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <RegistrationScreen />
-      {/* <LoginScreen />
-      <PostsScreen /> */}
-    </View>
+    <NavigationContainer>
+      <MainStack.Navigator style={styles.container} initialRouteName="Login">
+        <MainStack.Screen
+          name="Registration"
+          component={RegistrationScreen}
+          options={{ headerShown: false }}
+        />
+        <MainStack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <MainStack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <MainStack.Screen
+          name="Comments"
+          component={CommentsScreen}
+          options={({ navigation }) => ({
+            title: "Коментарі",
+            headerTitleStyle: {
+              fontSize: 17,
+              textAlign: "center",
+              fontFamily: "Roboto-Medium",
+            },
+            headerLeft: () => (
+              <TouchableOpacity
+                style={styles.backBtn}
+                // onPress={() => navigation.navigate("PostsScreen")}
+                onPress={() => navigation.goBack()}
+              >
+                <SvgBack />
+              </TouchableOpacity>
+            ),
+          })}
+        />
+      </MainStack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: "relative",
+    paddingTop: 44,
+    paddingBottom: 32,
   },
+  backBtn: { marginLeft: 16 },
 });
