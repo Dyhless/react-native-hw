@@ -27,7 +27,7 @@ const validationSchema = object().shape({
 });
 
 export const LoginScreen = () => {
-  const navigation = useNavigation();
+const navigation = useNavigation();
   const {
     control,
     handleSubmit,
@@ -58,7 +58,6 @@ export const LoginScreen = () => {
     setEmail("");
     setPassword("");
     reset();
-
     navigation.navigate("Home", {
       screen: "PostsScreen",
       params: {

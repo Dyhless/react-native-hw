@@ -26,7 +26,7 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
+ <NavigationContainer>
       <MainStack.Navigator style={styles.container} initialRouteName="Login">
         <MainStack.Screen
           name="Registration"

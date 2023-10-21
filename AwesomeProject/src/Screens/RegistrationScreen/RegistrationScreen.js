@@ -29,8 +29,7 @@ const validationSchema = object().shape({
 });
 
 export const RegistrationScreen = () => {
-  const navigation = useNavigation();
-
+const navigation = useNavigation();
   const {
     control,
     handleSubmit,
@@ -69,7 +68,6 @@ export const RegistrationScreen = () => {
     setEmail("");
     setPassword("");
     reset();
-
     navigation.navigate("Home", {
       screen: "PostsScreen",
       // params: {
@@ -186,7 +184,7 @@ export const RegistrationScreen = () => {
           >
             <Text style={styles.registrationButtonText}>Зареєструватися</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text style={styles.registrationLinkText}>
               Вже є акаунт? Увійти
             </Text>
@@ -196,4 +194,3 @@ export const RegistrationScreen = () => {
     </TouchableWithoutFeedback>
   );
 };
-
