@@ -1,13 +1,14 @@
 import "react-native-gesture-handler";
-import { NavigationContainer } from "@react-navigation/native";
-import { useFonts } from "expo-font";
-import { StyleSheet, TouchableOpacity } from "react-native";
-import { LoginScreen } from "./src/Screens/LoginScreen/LoginScreen";
 
-import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
+import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import { useFonts } from "expo-font";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { SvgBack } from "./src/Images/Svg";
+
+import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
+import { LoginScreen } from "./src/Screens/LoginScreen/LoginScreen";
 import { Home } from "./src/Screens/Home/Home";
 import { CommentsScreen } from "./src/Screens/CommentsScreen/CommentsScreen";
 

@@ -16,6 +16,8 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { SvgAdd } from "../../Images/Svg";
 
+import { styles } from "./RegistrationScreen.styles";
+
 const validationSchema = object().shape({
   login: string().required("Логін є обов'язковим полем"),
   email: string()
