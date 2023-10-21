@@ -13,6 +13,8 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { SvgAdd } from "../../Images/Svg";
 
 import { styles } from "./RegistrationScreen.styles";
 
@@ -27,6 +29,7 @@ const validationSchema = object().shape({
 });
 
 export const RegistrationScreen = () => {
+const navigation = useNavigation();
   const {
     control,
     handleSubmit,
@@ -65,6 +68,13 @@ export const RegistrationScreen = () => {
     setEmail("");
     setPassword("");
     reset();
+    navigation.navigate("Home", {
+      screen: "PostsScreen",
+      // params: {
+      //   login: login,
+      //   email: email,
+      // },
+    });
   };
 
   return (
@@ -86,10 +96,7 @@ export const RegistrationScreen = () => {
               style={styles.avatarImage}
             />
             <TouchableOpacity style={styles.addButton} onPress={addAvatar}>
-              <Image
-                source={require("../../Images/added.png")}
-                style={styles.addButtonIcon}
-              />
+              <SvgAdd />
             </TouchableOpacity>
           </View>
           <Text style={styles.registrationTitle}>Реєстрація</Text>
@@ -177,7 +184,7 @@ export const RegistrationScreen = () => {
           >
             <Text style={styles.registrationButtonText}>Зареєструватися</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text style={styles.registrationLinkText}>
               Вже є акаунт? Увійти
             </Text>

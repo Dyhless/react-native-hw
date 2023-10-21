@@ -38,11 +38,7 @@ export const styles = StyleSheet.create({
     width: 44,
     height: 44,
     right: -24,
-    bottom: 7,
-  },
-  addButtonIcon: {
-    width: 44,
-    height: 44,
+    bottom: 0,
   },
   registrationTitle: {
     fontFamily: "Roboto-Medium",
@@ -76,6 +72,7 @@ export const styles = StyleSheet.create({
   },
   lastInputWrapper: {
     position: "relative",
+    marginBottom: 16,
   },
   showPasswordText: {
     position: "absolute",

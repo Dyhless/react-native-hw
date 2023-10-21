@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { object, string } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
+  StyleSheet,
   ImageBackground,
   KeyboardAvoidingView,
   View,
@@ -12,6 +13,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { styles } from "./LoginScreen.styles";
 
@@ -25,6 +27,7 @@ const validationSchema = object().shape({
 });
 
 export const LoginScreen = () => {
+const navigation = useNavigation();
   const {
     control,
     handleSubmit,
@@ -55,6 +58,12 @@ export const LoginScreen = () => {
     setEmail("");
     setPassword("");
     reset();
+    navigation.navigate("Home", {
+      screen: "PostsScreen",
+      params: {
+        email: email,
+      },
+    });
   };
 
   return (
@@ -136,7 +145,9 @@ export const LoginScreen = () => {
           </TouchableOpacity>
           <View style={styles.registrationTextWrapper}>
             <Text style={styles.registrationLinkText}>Немає акаунту?</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Registration")}
+            >
               <Text style={styles.registrationLink}>Зареєструватися</Text>
             </TouchableOpacity>
           </View>
